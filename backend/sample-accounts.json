@@ -1,0 +1,22 @@
+[
+  {
+    "accountId": "ACC1001",
+    "holderName": "Demo User A",
+    "balance": 12500.75,
+    "currency": "INR",
+    "transactions": [
+      {"date":"2025-11-10","type":"debit","amount":1200.00,"desc":"Tuition"},
+      {"date":"2025-11-05","type":"credit","amount":5000.00,"desc":"Salary"}
+    ]
+  },
+  {
+    "accountId": "ACC1002",
+    "holderName": "Demo User B",
+    "balance": 4500.00,
+    "currency": "INR",
+    "transactions": [
+      {"date":"2025-10-21","type":"debit","amount":300.00,"desc":"Groceries"},
+      {"date":"2025-10-02","type":"credit","amount":2000.00,"desc":"Freelance"}
+    ]
+  }
+]
