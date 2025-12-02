@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Banking Software System - Demo</title>
+  <style>
+    body{font-family:Arial;padding:20px}
+    .card{border:1px solid #ddd;padding:16px;border-radius:6px;max-width:700px}
+    input,button{padding:8px;margin:8px 0;width:100%;box-sizing:border-box}
+    pre{background:#f7f7f7;padding:10px;border-radius:4px}
+  </style>
+</head>
+<body>
+  <h1>Banking Software System - Demo</h1>
+  <div class="card">
+    <h3>Lookup Account (demo)</h3>
+    <input id="accountId" placeholder="Enter Account ID (e.g., ACC1001)">
+    <button id="fetchBtn">Fetch Account</button>
+    <h4>Result</h4>
+    <pre id="output">No result yet.</pre>
+  </div>
+
+  <script>
+    const sampleUrl = "/backend/sample-accounts.json";
+    async function fetchData(id){
+      try{
+        const r = await fetch(sampleUrl);
+        const data = await r.json();
+        if(!id) return data;
+        const acct = data.find(a => a.accountId === id);
+        return acct || { error: "No records for " + id };
+      }catch(e){
+        return { error: "Failed to fetch demo backend. Run via local server if needed." }
+      }
+    }
+    document.getElementById('fetchBtn').onclick = async ()=>{
+      const id = document.getElementById('accountId').value.trim();
+      document.getElementById('output').textContent = 'Loading...';
+      const res = await fetchData(id);
+      document.getElementById('output').textContent = JSON.stringify(res, null, 2);
+    };
+  </script>
+</body>
+</html>
