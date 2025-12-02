@@ -1,9 +1,6 @@
-Backend (demo) for Banking Software System
------------------------------------------
+Banking Software System - Demo (CS183-CS189)
 
-Files:
-- sample-accounts.json : static JSON simulating account data & transactions
-
-How to test:
-1. Open frontend/index.html in a static server environment (recommended) or directly (may be blocked due to fetch CORS).
-2. For local testing, run: npx http-server . -p 8080 and open http://localhost:8080/frontend/index.html
+A simple SEPM assignment demo showing:
+- frontend/index.html : demo UI to fetch account data
+- backend/sample-accounts.json : static backend data
+- Confluence + Jira integration (documentation & tracking)
